@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add py.typed marker for mypy
 - screenshot_mode.py to run simulation without visualisations (for nicer screenshots).
+- Add model for a cube using fiducal markers (stag) instead of colours.
 
 ### Deprecated
 - The `pinocchio_utils` module is deprecated and will be removed in a future release.

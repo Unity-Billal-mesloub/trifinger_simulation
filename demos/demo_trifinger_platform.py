@@ -32,7 +32,7 @@ def main():
     parser.add_argument(
         "--object",
         type=str,
-        choices=["cube", "dice", "none"],
+        choices=["cube", "stag_cube", "dice", "none"],
         default="cube",
         metavar="OBJECT_TYPE",
         help="Which type of object to use (if any).",
@@ -42,6 +42,8 @@ def main():
     object_type = trifinger_platform.ObjectType.NONE
     if args.object == "cube":
         object_type = trifinger_platform.ObjectType.COLORED_CUBE
+    if args.object == "stag_cube":
+        object_type = trifinger_platform.ObjectType.STAG_CUBE
     elif args.object == "dice":
         object_type = trifinger_platform.ObjectType.DICE
 
