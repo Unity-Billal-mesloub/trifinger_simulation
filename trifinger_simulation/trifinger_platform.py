@@ -17,6 +17,7 @@ class ObjectType(enum.Enum):
     NONE = 0
     COLORED_CUBE = 1
     DICE = 2
+    STAG_CUBE = 3
 
 
 class ObjectPose:
@@ -210,6 +211,7 @@ class TriFingerPlatform:
 
         self._has_object_tracking = False
         self.object_type = object_type
+        self.cube: collision_objects.BaseCollisionObject
         if object_type == ObjectType.COLORED_CUBE:
             self.cube = collision_objects.ColoredCubeV2(
                 position=initial_object_pose.position,
@@ -217,6 +219,14 @@ class TriFingerPlatform:
                 pybullet_client_id=self.simfinger._pybullet_client_id,
             )
             self._has_object_tracking = True
+        elif object_type == ObjectType.STAG_CUBE:
+            self.cube = collision_objects.StagCube(
+                position=initial_object_pose.position,
+                orientation=initial_object_pose.orientation,
+                pybullet_client_id=self.simfinger._pybullet_client_id,
+            )
+            self._has_object_tracking = True
+
         elif object_type == ObjectType.DICE:
             die_mass = 0.012
             # use a random goal for initial positions
