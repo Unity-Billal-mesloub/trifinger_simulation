@@ -27,7 +27,7 @@ and also the corresponding paper:
   year = {2020},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/open-dynamic-robot-initiative/trifinger_simulation}},
+  howpublished = {\url{https://github.com/Unity-Billal-mesloub/trifinger_simulation}},
 }
 ```
 
